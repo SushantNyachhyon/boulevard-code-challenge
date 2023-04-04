@@ -1,0 +1,11 @@
+{
+    bracketSpacing: true,
+    bracesSpacing: true,
+    jsxBracketSameLine: true,
+    singleQuote: true,
+    trailingComma: 'none',
+    arrowParens: 'avoid',
+    noSemi: true,
+    tabWidth: 4,
+    useTabs: false
+};
