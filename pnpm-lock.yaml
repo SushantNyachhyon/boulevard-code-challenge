@@ -10,6 +10,7 @@ specifiers:
   '@vitejs/plugin-react': ^3.1.0
   autoprefixer: ^10.4.14
   axios: ^1.3.4
+  blurhash: ^2.0.5
   eslint: ^8.37.0
   history: ^5.3.0
   jsdom: ^21.1.1
@@ -27,6 +28,7 @@ specifiers:
 dependencies:
   '@phosphor-icons/react': 2.0.8_biqbaboplfbrettd7655fr4n2y
   axios: 1.3.4
+  blurhash: 2.0.5
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-router-dom: 6.10.0_biqbaboplfbrettd7655fr4n2y
@@ -1035,6 +1037,10 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /blurhash/2.0.5:
+    resolution: {integrity: sha512-cRygWd7kGBQO3VEhPiTgq4Wc43ctsM+o46urrmPOiuAe+07fzlSB9OJVdpgDL0jPqXUVQ9ht7aq7kxOeJHRK+w==}
+    dev: false
+
   /brace-expansion/1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
     dependencies:
@@ -1055,7 +1061,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001474
-      electron-to-chromium: 1.4.349
+      electron-to-chromium: 1.4.352
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10_browserslist@4.21.5
     dev: true
@@ -1321,8 +1327,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium/1.4.349:
-    resolution: {integrity: sha512-34LBfVDiL6byWorSmQOPwq4gD5wpN8Mhh5yPGQr67FbcxsfUS0BDJP9y6RykSgeWVUfSkN/2dChywnsrmKVyUg==}
+  /electron-to-chromium/1.4.352:
+    resolution: {integrity: sha512-ikFUEyu5/q+wJpMOxWxTaEVk2M1qKqTGKKyfJmod1CPZxKfYnxVS41/GCBQg21ItBpZybyN8sNpRqCUGm+Zc4Q==}
     dev: true
 
   /emoji-regex/9.2.2:
