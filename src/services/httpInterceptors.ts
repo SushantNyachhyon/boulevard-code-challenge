@@ -1,8 +1,10 @@
 import { InternalAxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
+import { unsplashAccessKey } from '@/config';
 
 export function handlePreRequest(
     config: InternalAxiosRequestConfig
 ): InternalAxiosRequestConfig {
+    config.headers['Authorization'] = `Client-ID ${unsplashAccessKey}`;
     return config;
 }
 

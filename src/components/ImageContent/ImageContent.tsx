@@ -3,9 +3,9 @@ import { useState } from 'react';
 
 import Image from '@/components/Image/Image';
 import Modal from '@/components/Modal/Modal';
-import { IUnsplash } from '@/types/unsplash.type';
+import { IUnsplash , IResult } from '@/types/unsplash.type';
 
-const ImageContent: FC<{ data: IUnsplash }> = (props) => {
+const ImageContent: FC<{ data: IResult[] }> = (props) => {
     const [show, setShow] = useState(false);
     const [imgSrc, setImgSrc] = useState('');
 
@@ -14,11 +14,13 @@ const ImageContent: FC<{ data: IUnsplash }> = (props) => {
             <Modal
                 show={show}
                 onClose={() => { setShow(false); }}>
-                <img src={imgSrc} className='f-full h-full object-contain' />
+                <img
+                    src={imgSrc}
+                    className='w-full h-auto max-h-[80vh] object-contain' />
             </Modal>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10'>
                 {
-                    props.data.results.map(image => (
+                    props.data.map(image => (
                         <a
                             href="#"
                             key={image.id}

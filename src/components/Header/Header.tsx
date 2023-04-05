@@ -12,7 +12,7 @@ const Header: FC = () => {
             <header
                 className={`${Styles.header} ${!matched && Styles.active}`}>
                 <div className='app-container'>
-                    <div className='flex items-center space-x-6'>
+                    <div className={Styles.headerContainer}>
                         <Link to="/" className={Styles.logoText}>
                             Boulevard
                         </Link>
