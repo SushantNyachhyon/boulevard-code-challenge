@@ -27,8 +27,12 @@ const Home: FC = () => (
                         iconSize={26} />
                     <span
                         className={Styles.helperText}>
-                        Powered by <a href="https://unsplash.com">Unsplash</a>
-
+                        Powered by {' '}
+                        <a
+                            href="https://unsplash.com"
+                            target="_blank">
+                            Unsplash
+                        </a>
                     </span>
                 </div>
             </div>
