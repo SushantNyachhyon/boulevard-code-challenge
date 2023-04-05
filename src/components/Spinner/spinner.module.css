@@ -1,0 +1,17 @@
+.spinner {
+    border-radius: 50%;
+    position: relative;
+    text-indent: -9999em;
+    border-left: 2px solid transparent;
+    transform: translateZ(0);
+    animation: spin .6s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
