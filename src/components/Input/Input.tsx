@@ -1,4 +1,9 @@
-import type { FC, ChangeEventHandler, KeyboardEventHandler } from 'react';
+import type { 
+    ChangeEventHandler, 
+    KeyboardEventHandler, 
+    FocusEventHandler ,
+} from 'react';
+import { forwardRef } from 'react';
 import style from './input.module.css';
 
 type InputProps = {
@@ -8,6 +13,8 @@ type InputProps = {
     value?: string | number;
     onChange?: ChangeEventHandler<HTMLInputElement>;
     onKeyUp?: KeyboardEventHandler<HTMLInputElement>;
+    onFocus?: FocusEventHandler<HTMLInputElement>;
+    onBlur?: FocusEventHandler<HTMLInputElement>;
     placeholder?: string;
     autoFocus?: boolean;
     classList?: string;
@@ -20,12 +27,14 @@ const defaultProps = {
     value: '',
     onChange: () => { return; },
     onKeyUp: () => { return; },
+    onFocus: () => { return; },
+    onBlur: () => { return; },
     placeholder: '',
     autoFocus: false,
     disabled: false
 };
 
-const Input: FC<InputProps> = props => (
+const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
     <input
         type={props.type}
         id={props.id}
@@ -35,12 +44,15 @@ const Input: FC<InputProps> = props => (
         value={props.value}
         onChange={props.onChange}
         onKeyUp={props.onKeyUp}
+        onFocus={props.onFocus}
+        onBlur={props.onBlur}
         autoFocus={props.autoFocus}
         autoComplete="new-password"
         disabled={props.disabled}
         data-testid='input'
+        ref={ref}
     />
-);
+));
 
 Input.defaultProps = defaultProps;
 
