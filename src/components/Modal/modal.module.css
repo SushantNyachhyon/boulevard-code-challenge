@@ -1,0 +1,9 @@
+.modal {
+    @apply fixed top-0 bottom-0 left-0 right-0 z-40 flex justify-center w-full h-screen opacity-0 md:items-center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.modalContent {
+    @apply bg-white rounded-md w-full md:w-1/2 px-6 py-8 z-30 absolute;
+}
