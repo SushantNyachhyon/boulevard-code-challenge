@@ -1,15 +1,17 @@
 import type { FC } from 'react';
 
-import Image from '@/assets/images/image.jpg';
+import Image from '@/components/Image/Image';
+import { IUnsplash } from '@/types/unsplash.type';
 
-const ImageContent: FC = () => (
-    <div className='grid grid-cols-3 gap-10 mt-10'>
-        <img src={Image} className="w-full h-96 object-cover" />
-        <img src={Image} className="w-full h-96 object-cover" />
-        <img src={Image} className="w-full h-96 object-cover" />
-        <img src={Image} className="w-full h-96 object-cover" />
-        <img src={Image} className="w-full h-96 object-cover" />
-        <img src={Image} className="w-full h-96 object-cover" />
+const ImageContent: FC<{ data: IUnsplash }> = (props) => (
+    <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10'>
+        {
+            props.data.results.map(image => (
+                <Image 
+                    key={image.id} 
+                    data={image} />
+            ))
+        }
     </div>
 );
 
