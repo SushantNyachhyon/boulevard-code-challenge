@@ -5,5 +5,5 @@
 }
 
 .modalContent {
-    @apply bg-white rounded-md w-full md:w-1/2 px-6 py-8 z-30 absolute;
+    @apply bg-white rounded-md w-full lg:w-1/2 max-h-[90vh] px-6 py-8 z-30 absolute overflow-hidden;
 }
