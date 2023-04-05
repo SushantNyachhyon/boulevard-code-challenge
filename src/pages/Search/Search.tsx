@@ -1,7 +1,8 @@
 import type { FC } from 'react';
 
 import { ImageContent } from '@/components/ImageContent';
-import { Skeleton } from '@/components/Skeleton';
+import { ImageSkeleton } from '@/components/ImageSkeleton';
+import { data } from '@/data';
 
 const Home: FC = () => (
     <main>
@@ -11,18 +12,8 @@ const Home: FC = () => (
                     className="text-2xl text-gray-600 font-semibold">
                     Free Abstract Images
                 </h2>
-                <div className="grid grid-cols-3 gap-10 mt-10">
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                </div>
-                <ImageContent />
+                <ImageSkeleton />
+                <ImageContent data={data} />
             </div>
         </section>
     </main>

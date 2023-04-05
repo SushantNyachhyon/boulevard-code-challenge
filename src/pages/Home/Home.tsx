@@ -1,9 +1,10 @@
 import type { FC } from 'react';
 
-import { Skeleton } from '@/components/Skeleton';
 import { Search } from '@/components/Search';
 import { ImageContent } from '@/components/ImageContent';
+import { ImageSkeleton } from '@/components/ImageSkeleton';
 import Styles from './home.module.css';
+import { data } from '@/data';
 
 const Home: FC = () => (
     <main>
@@ -43,18 +44,8 @@ const Home: FC = () => (
                     className="text-2xl text-gray-600 font-semibold">
                     Browse Our Top Picks
                 </h2>
-                <div className="grid grid-cols-3 gap-10 mt-10">
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                    <Skeleton height={400} />
-                </div>
-                <ImageContent />
+                <ImageSkeleton />
+                <ImageContent data={data} />
             </div>
         </section>
     </main>
