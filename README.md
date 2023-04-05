@@ -5,7 +5,7 @@ Using Unsplash API, displays the Images as per the user query.
 
 # Contents
 
-* [Global Requisites](#global-requisites)
+* [Global Requirement](#global-requirement)
 * [Install, Configure & Run](#install-configure--run)
 
 ### Global Requirement
