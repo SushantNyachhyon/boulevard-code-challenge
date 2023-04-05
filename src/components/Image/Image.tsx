@@ -1,45 +1,42 @@
 import type { FC } from 'react';
-import { useEffect, useMemo, useRef } from 'react';
-import { decode } from 'blurhash';
-
+import { useState, useEffect, useMemo, useRef } from 'react';
+import { Blurhash } from 'react-blurhash';
 import type { IResult } from '@/types/unsplash.type';
 
 const Image: FC<{ data: IResult }> = (props) => {
-    const imageRef = useRef<HTMLImageElement>(null);
-    const width = 500;
-    const height = 350;
-    const punch = 1;
+    const imageContainer = useRef<HTMLDivElement>(null);
+    const [loading, setLoading] = useState(true);
 
     const observer = useMemo(() => new IntersectionObserver(
         ([entry]) => {
             if (entry.isIntersecting)
-                (entry.target as HTMLImageElement).src = props.data.urls.small;
+                setLoading(false);
         }
-    ), [imageRef]);
-
-    const createBlurImage = () => {
-        const pexels = decode(props.data.blur_hash, width, height, punch);
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        const data = ctx?.createImageData(width, height);
-        data?.data.set(pexels);
-        ctx?.putImageData(data as ImageData, 0, 0);
-        if (imageRef.current)
-            imageRef.current.src = canvas.toDataURL('image/png');
-    };
+    ), [imageContainer]);
 
 
     useEffect(() => {
-        createBlurImage();
-        observer.observe(imageRef.current as HTMLImageElement);
+        observer.observe(imageContainer.current as HTMLDivElement);
         return () => observer.disconnect();
     }, []);
 
     return (
-        <img
-            ref={imageRef}
-            src=''
-            className="w-full h-[350px] object-cover" />
+        <div ref={imageContainer}>
+            {
+                loading
+                    ? <Blurhash
+                        hash={props.data.blur_hash}
+                        width={'100%'}
+                        height={350}
+                        resolutionX={32}
+                        resolutionY={32}
+                        punch={1}
+                    />
+                    : <img
+                        src={props.data.urls.small}
+                        className="w-full h-[350px] object-cover" />
+            }
+        </div>
     );
 };
 
