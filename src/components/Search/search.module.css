@@ -1,0 +1,20 @@
+.searchIcon {
+    @apply absolute right-4 top-4 text-gray-600;
+}
+
+.dropDownContainer {
+    @apply w-full bg-white rounded absolute top-16 p-4 flex flex-col shadow-lg z-10;
+}
+
+.dropDownHeader {
+    @apply text-sm font-medium text-gray-700 mt-2;
+}
+
+.recentContainer {
+    @apply flex items-center flex-wrap space-x-2 mt-2;
+}
+
+.recentItem {
+    @apply border border-gray-400 rounded p-2 text-sm text-gray-800;
+}
+

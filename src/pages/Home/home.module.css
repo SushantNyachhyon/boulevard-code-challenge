@@ -1,0 +1,19 @@
+.landingSection {
+    @apply w-full h-[600px] bg-gradient-to-br from-indigo-600 to-purple-600;
+}
+
+.landingContainer {
+    @apply w-full h-[600px] flex flex-col justify-center;
+}
+
+.landingHeading {
+    @apply text-6xl text-white font-bold;
+}
+
+.landingSubHeading {
+    @apply text-xl text-white font-medium mt-4;
+}
+
+.helperText {
+    @apply text-sm text-white block mt-2;
+}
