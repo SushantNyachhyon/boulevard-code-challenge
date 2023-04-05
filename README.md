@@ -3,6 +3,9 @@
 ![reactjs](https://img.shields.io/badge/Reactjs-282C34?style=for-the-badge&logo=react)&nbsp;![typescript](https://img.shields.io/badge/Typescript-282C34?style=for-the-badge&logo=typescript)
 Using Unsplash API, displays the Images as per the user query.
 
+### Live Demo
+Live demo at [sushantnyachhyon.com.np](https://sushantnyachhyon.com.np/)
+
 # Contents
 
 * [Global Requirement](#global-requirement)
